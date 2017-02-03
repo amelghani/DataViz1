@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		
+			
+		
+		<title> Research on Brumese Refugees</title>
+		
+		<!-- The first is the style tag for the header -->
+		<style>
+			.main_title{font-size:32;
+						font-family:Helvetica;
+						color:#9400D3;
+						}
+	/* This is the stye tag for the titles throughout the page. I had some trouble attacing the class. I used 'a' tag 
+	 * and then associated a class to it. The 'a' tag works similar to the img tag for embeded links
+	 */		
+			a.unwan_s 
+			{	font-size: 20px;
+				font-family:Georgia;
+				color:#9400D3;
+			}
+			
+			img{width:700px;
+						border: 2px;
+						color:#8B008B;
+						}
+		</style>
+	
+	</head>
+	<body>
+		
+		<!-- This is the header of the main page. There is a gap in the divs for summary and header -->
+		
+		<h1 class="main_title"> Research on Burmese Refugees </h1>
+		
+		
+		<!-- This the bloc for the first article. The story and image are from The Dimplomat. 
+			The link is embeded in the header 
+			Each action has it's own div 
+			I added the 'br' tag for breaks to give spaces. Tried using the 'p' tag first but it doesn't do much-->
+		
+		<div>
+			<img src=http://thediplomat.com/wp-content/uploads/2015/08/thediplomat_2015-08-06_11-25-10-386x256.jpg
+		</div>
+		<br>  	
+		  	<div>
+		  		<a class= "unwan_s" href="http://thediplomat.com/2015/10/myanmars-refugee-problem-its-not-just-the-rohingya"> Myanmar’s Refugee Problem: It’s Not Just the Rohingya</a> 
+		</div>
+			<br>
+			<div
+				<p>
+					The term Burmese Refugees immediately conjures up the image of the Rohingya Muslims.
+					The community was covered extensively by the media in 2015, when the Rohingya started fleeing the country.
+					The Burmese Refugee crisis is more than that.
+					The article highlights other ethnicities and groups who fled the country due to militarization. 
+					As Democratic reforms began in the country in the country in 2011, the article discusses the many reasons these people fled Burma in the first place
+					and what might be in store for them if they return.
+					It also provides an overview of the different ethnicities of people fleeing from Burma and seeking refuge elsewhere.
+					<br>
+					<br>
+					<br>
+				</p>
+			</div>
+			
+			<!-- This is the begining block for the second article. There is a gap in the divs for summary and header -->
+		
+		<div>
+			<img src=https://timedotcom.files.wordpress.com/2016/10/gettyimages-145964636.jpg?w=1100&quality=85
+		</div>
+			<div>
+				
+				<a class="unwan_s" href="http://time.com/4544021/refugees-burma-myanmar-thailand-repatriation-unhcr/">Refugees From Burma Begin Their Slow Return From Border Camps in Thailand</a> 
+			</div>
+		    
+		    <div>
+				<p>
+					The article discusses repatriation of Burmese refugees from Thailand, which started in October 2016.
+					It also provides a brief overview of the refugees who have been living in Thailand for over 30 years now. 
+					It goes on to mention that while repatriation might be taking place it is unlikely that a large group of refugees will go back to Burma
+					since the political situation there is still precarious for these people.
+				</p>
+			</div>
+			<br>
+			<br>
+			<br>
+			
+			<!-- This is the bloc for the third article. There is a gap for divs for summary and header -->
+			<div>
+				<img src=http://www.unhcr.org/thumb1/581320ae4.jpg
+			</div>
+			<br>
+				<div>
+				
+					<a class="unwan_s" href="http://www.unhcr.org/en-us/news/latest/2016/10/58131e5d4/myanmar-refugees-pave-way-home-pilot-return.html">Myanmar refugees pave the way home in pilot return</a>
+				</div>
+				
+			<div>
+				<p>
+					The article produced by the UNHCR provides some details of the refugees who left Thailand to reutrn to Myanmar. 
+					It is focused on the Nupo refugee camp in Thailand and discusses the stories of different refugees who returned.
+					Those returning express a mixture of hope and anxiety on their return, some are worried about finding jobs while others have been planning for this moment for a while. 
+				</p>
+			</div>
+			<br>
+			<br>
+			<br>
+			
+			<!-- This is the bloc for the fourth story. There is a gap for divs for summary and header -->
+			<div>
+				<img src=http://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2015/12/3/6575cf21e4124c71a7e7791658210380_18.jpg
+			</div>
+				
+				<br>
+				<div>
+				
+					<a class="unwan_s" href="http://www.aljazeera.com/indepth/features/2015/12/refugees-myanmar-delhi-future-151203183015643.html">Refugees from Myanmar say 'Delhi is our future'</a>
+				</div>
+			
+			<div>
+				<p>
+					The article uses the story of Thanga from Burma to highlight the many problems Burmese refugees face in India. 
+					Thanga, is from the Chin ethnicity and is Christian, which is why he had to flee in July 2007, after he got into an alteraction with a military officer. 
+					Delhi, in India is home to over 5000 Chin refugees, which is why Thanga also made the city his home. UNHCR assistance to these refugees is limited. 
+					The organization only provides assistance to the disabled. 
+				</p>
+			</div>
+			<br>
+			<br>
+			<br>
+	</body>
+</html>
+
