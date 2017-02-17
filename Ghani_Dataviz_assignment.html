@@ -153,16 +153,15 @@
 
 			var countries = ["India", "Malaysia", "Thailand", "United States", "Bangladesh"];
 
-			/*This the number of refugees each country has taken in */
+			/*This the number of refugees and ethincities each country has taken in. Corrected into an an object within an array */
 
-			var number_countries_have = {
-				"15,735" : "India",
-				"88,637" : "Malaysia",
-				"106,349" : "Thailand",
-				"12,347" : "United States",
-				"231,948" : "Bangladesh"
-			};
-
+			var number_countries_have_and_ethnicities = { "India": ["15,735", "Chin"],
+							"Malaysia": ["88,637","Karen", "Rohingya"],
+							"Thailand": ["106,637", "Karen"],
+							"United States": ["12,347", "Chin", "Karen"],
+							"Bangladesh": ["231,948", "Rohingya"],
+						};
+		
 
 
 
