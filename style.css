@@ -1,0 +1,22 @@
+<!-- The first is the style tag for the header -->
+		<style>
+			.main_title {
+				font-size: 32;
+				font-family: Helvetica;
+				color: #9400D3;
+			}
+			/* This is the stye tag for the titles throughout the page. I had some trouble attacing the class. I used 'a' tag
+			 * and then associated a class to it. The 'a' tag works similar to the img tag for embeded links
+			 */
+			a.unwan_s {
+				font-size: 20px;
+				font-family: Georgia;
+				color: #9400D3;
+			}
+
+			img {
+				width: 700px;
+				border: 3px solid #4B0082
+			}
+
+		</style>
