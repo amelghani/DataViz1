@@ -20,9 +20,9 @@
 			}
 			
 			/*This is adding a background color to prevent the page from jumping so space of the visualization is reserved
-			 * when the page loads. I've made it very very light greyish purple. 
+			 * when the page loads. I've made it very light greyish purple. 
 			 * It barely shows on the page but prevents jump. */
-	#refugeebarchart {width: 600px;
+			.viz_style {width: 600px;
                        height :400px;
                        background-color:#EEE5EE;
 		
