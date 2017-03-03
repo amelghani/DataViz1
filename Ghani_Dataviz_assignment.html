@@ -8,22 +8,29 @@
 
 		<link rel="stylesheet" href="style.css"/>
 
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 		<!--Got thee code from the google link and started all over again.-->
 		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 		<script type="text/javascript">
-			
 			/* This is asking for the chart package to load. Go to google server and get it. */
 			google.charts.load('current', {
 				'packages' : ['corechart']
 			});
 
 			/* When google calls back with the contents of the "corechart" package, execute the draw chart function*/
-			google.charts.setOnLoadCallback(drawChart);
+			google.charts.setOnLoadCallback(drawAllCharts);
+
+			function drawAllCharts() {
+
+				drawbarchart();
+				drawpiechart();
+			}
 
 			// Callback that creates and populates a data table,
 			// instantiates the chart, passes in the data and
 			// draws it.
-			function drawChart() {
+			function drawbarchart() {
 
 				// Create the data table.
 				/*Call on the DataTable recipe to make data table.
@@ -50,7 +57,7 @@
 				var options = {
 					'title' : 'Refugees resetteled in different countries',
 					'width' : 600,
-					'height' : 400
+					'height' : 400,
 				};
 
 				/* Creating a variable, in which im storing a result of calling the "BarChart" function */
@@ -60,58 +67,144 @@
 				/*This is where the chart has to draw itself. Point it to the right variables from above. Don't switch names*/
 				barchart.draw(datafortable, options);
 			}
+
+			/*This is where the second chart starts*/
+
+			// Callback that creates and populates a data table,
+			// instantiates the chart, passes in the data and
+			// draws it.
+
+			function drawpiechart() {
+
+				// Create the data table.
+				/*Call on the DataTable recipe to make data table.
+				 * When you change the variable name here, keep it consistent. throughout.*/
+
+				var datafortable = new google.visualization.DataTable();
+
+				/*Add a column of type string labeled "Type of people displaced"*/
+				datafortable.addColumn('string', 'type of displacement');
+
+				/*Add a column of type number, labeled "Number of people displaced"*/
+				datafortable.addColumn('number', 'number displaced');
+
+				/*My rows must be a lists of lists with each item in the lot having the same number of elements
+				 as I have columns and with the data types matching those that were added in my "addColumn"
+				 function calls*/
+				/*I'm using UNHCR figutres from 2015 to show that Myanmar is still not stable.
+				 However, the UNHCR does not have figures for Refugees listed */
+
+				datafortable.addRows([['Stateless', 938000], ['IDPs', 451089], ['Returnees', 25267], ['Refugees', 0], ['Asylum Seekers', 1]]);
+
+				/* Options object includes some customization.
+				 * We will need to add to this extensively to make visualizations
+				 * we might want to publish */
+				var options = {
+					'title' : 'Population of concern from Myanmar. The UNHCR does not have data about the number of refugees from this country',
+					'width' : 600,
+					'height' : 400,
+				};
+
+				/* Creating a variable, in which im storing a result of calling the "BarChart" function */
+
+				var Piechart = new google.visualization.PieChart(document.getElementById('displacementpiechart'));
+
+				/*This is where the chart has to draw itself. Point it to the right variables from above. Don't switch names*/
+				Piechart.draw(datafortable, options);
+			}
+
 		</script>
 	</head>
 
 	</head>
 	<body>
 
-		<!-- This is the header of the main page. There is a gap in the divs for summary and header -->
+		<!--This makes it suitable to different platforms. All code is coming from bootstrap. -->
 
-		<h1 class="main_title"> Research on Burmese Refugees </h1>
+		<div class="container-fluid">
 
-		<!--Div that will hold the pie chart-->
-		
-		<div id="refugeebarchart"></div>
+			<!-- Stack the columns on mobile by making one full-width and the other half-width.
+			This is where the visualizations are being stacked.The divs containing the visualizations are placed here -->
 
-		<!-- This the bloc for the first article. The story and image are from The Dimplomat.
-		The link is embeded in the header
-		Each action has it's own div
-		I added the 'br' tag for breaks to give spaces. Tried using the 'p' tag first but it doesn't do much-->
+			<div class="row">
 
-		<div>
-			<img src=http://thediplomat.com/wp-content/uploads/2015/08/thediplomat_2015-08-06_11-25-10-386x256.jpg />
-		</div>
-		<br>
-		<div>
-			<a class= "unwan_s" href="http://thediplomat.com/2015/10/myanmars-refugee-problem-its-not-just-the-rohingya"> Myanmar’s Refugee Problem: It’s Not Just the Rohingya</a>
-		</div>
-		<br>
-		<div
-		<p>
-		The term Burmese Refugees immediately conjures up the image of the Rohingya Muslims.
-		The community was covered extensively by the media in 2015, when the Rohingya started fleeing the country.
-		The Burmese Refugee crisis is more than that.
-		The article highlights other ethnicities and groups who fled the country due to militarization.
-		As Democratic reforms began in the country in the country in 2011, the article discusses the many reasons these people fled Burma in the first place
-		and what might be in store for them if they return.
-		It also provides an overview of the different ethnicities of people fleeing from Burma and seeking refuge elsewhere.
-		<br>
-		<br>
-		<br>
-		</p>
-		</div>
+				<div class="col-xs-12 col-md-8">
+					<div class= "viz_style" id="refugeebarchart"></div>
+				</div>
 
-		<!-- This is the begining block for the second article. There is a gap in the divs for summary and header -->
+				<div class="col-xs-6 col-md-4">
+					<div class= "viz_style" id="displacementpiechart"></div>
+				</div>
 
-		<div>
-		<img src=https://timedotcom.files.wordpress.com/2016/10/gettyimages-145964636.jpg />
-		</div>
+			</div>
 
-		<br>
-		<div>
+			<!-- Columns start at 50% wide on mobile and bump up to 33.3% wide on desktop -->
+			<div class="row">
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+				<div class="col-xs-6 col-md-4">
+					.col-xs-6 .col-md-4
+				</div>
+			</div>
 
-		<a class="unwan_s" href="http://time.com/4544021/refugees-burma-myanmar-thailand-repatriation-unhcr/">Refugees From Burma Begin Their Slow Return From Border Camps in Thailand</a>
+			<!-- Columns are always 50% wide, on mobile and desktop -->
+			<div class="row">
+				<div class="col-xs-6">
+					.col-xs-6
+				</div>
+				<div class="col-xs-6">
+					.col-xs-6
+				</div>
+			</div>
+
+			<!-- The bootstrap code ends here-->
+
+			<!-- This is the header of the main page. There is a gap in the divs for summary and header -->
+
+			<h1 class="main_title"> Research on Burmese Refugees </h1>
+
+			<!-- This the bloc for the first article. The story and image are from The Dimplomat.
+			The link is embeded in the header
+			Each action has it's own div
+			I added the 'br' tag for breaks to give spaces. Tried using the 'p' tag first but it doesn't do much-->
+
+			<div>
+				<img src=http://thediplomat.com/wp-content/uploads/2015/08/thediplomat_2015-08-06_11-25-10-386x256.jpg />
+			</div>
+			<br>
+			<div>
+				<a class= "unwan_s" href="http://thediplomat.com/2015/10/myanmars-refugee-problem-its-not-just-the-rohingya"> Myanmar’s Refugee Problem: It’s Not Just the Rohingya</a>
+			</div>
+			<br>
+			<div
+			<p>
+			The term Burmese Refugees immediately conjures up the image of the Rohingya Muslims.
+			The community was covered extensively by the media in 2015, when the Rohingya started fleeing the country.
+			The Burmese Refugee crisis is more than that.
+			The article highlights other ethnicities and groups who fled the country due to militarization.
+			As Democratic reforms began in the country in the country in 2011, the article discusses the many reasons these people fled Burma in the first place
+			and what might be in store for them if they return.
+			It also provides an overview of the different ethnicities of people fleeing from Burma and seeking refuge elsewhere.
+			<br>
+			<br>
+			<br>
+			</p>
+			</div>
+
+			<!-- This is the begining block for the second article. There is a gap in the divs for summary and header -->
+
+			<div>
+			<img src=https://timedotcom.files.wordpress.com/2016/10/gettyimages-145964636.jpg />
+			</div>
+
+			<br>
+			<div>
+
+			<a class="unwan_s" href="http://time.com/4544021/refugees-burma-myanmar-thailand-repatriation-unhcr/">Refugees From Burma Begin Their Slow Return From Border Camps in Thailand</a>
 		</div>
 
 		<div>
@@ -171,6 +264,7 @@
 		<br>
 
 		<!--This is where i start the JavaScript-->
+		</div>
 
 		<script src= "scripts.js" type="text/javascript"</script>
 	</body>
