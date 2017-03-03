@@ -5,64 +5,63 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<title> Research on Brumese Refugees</title>
-		
+
 		<link rel="stylesheet" href="style.css"/>
-		
-		
-	<!--Got thee code from the google link and started all over again.-->
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
 
-    /* This is asking for the chart package to load. Go to google server and get it. */
-      google.charts.load('current', {'packages':['corechart']});
+		<!--Got thee code from the google link and started all over again.-->
+		<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+		<script type="text/javascript">
+			
+			/* This is asking for the chart package to load. Go to google server and get it. */
+			google.charts.load('current', {
+				'packages' : ['corechart']
+			});
 
-    /* When google calls back with the contents of the "corechart" package, execute the draw chart function*/
-      google.charts.setOnLoadCallback(drawChart);
+			/* When google calls back with the contents of the "corechart" package, execute the draw chart function*/
+			google.charts.setOnLoadCallback(drawChart);
 
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
+			// Callback that creates and populates a data table,
+			// instantiates the chart, passes in the data and
+			// draws it.
+			function drawChart() {
 
-        // Create the data table.
-        /*Call on the DataTable recipe to make data table*/
-        var data = new google.visualization.DataTable();
-        /*Add a column of type string labeled "Countries"*/
-        data.addColumn('string', 'Countries');
-        /*Add a column of type number, labeled "Refugees"*/
-        data.addColumn('number', 'Refugees');
-        /*My rows must be a lists of lists with each item in the lot having the same number of elements
-				 as I have columns and with the data types matching those that were added in my "addColumn" 
+				// Create the data table.
+				/*Call on the DataTable recipe to make data table.
+				 * When you change the variable name here, keep it consistent. throughout.*/
+
+				var datafortable = new google.visualization.DataTable();
+
+				/*Add a column of type string labeled "Countries"*/
+				datafortable.addColumn('string', 'Countries');
+
+				/*Add a column of type number, labeled "Refugees"*/
+				datafortable.addColumn('number', 'Refugees');
+
+				/*My rows must be a lists of lists with each item in the lot having the same number of elements
+				 as I have columns and with the data types matching those that were added in my "addColumn"
 				 function calls*/
 				/*I'm using UNHCR figutres from 2015 to say how many refugees each country has taken in*/
 
-        data.addRows([
-        ['United States', 12347],
-          ['India', 15735],
-          ['Malaysia', 88637],
-          ['Thailand', 106637],
-          ['Bangladesh', 231948]
-        ]);
+				datafortable.addRows([['United States', 12347], ['India', 15735], ['Malaysia', 88637], ['Thailand', 106637], ['Bangladesh', 231948]]);
 
-        /* Options object includes some customization. 
+				/* Options object includes some customization.
 				 * We will need to add to this extensively to make visualizations
 				 * we might want to publish */
-        var options = {'title':'Refugees resetteled in different countries',
-                       'width':600,
-                       'height':400};
+				var options = {
+					'title' : 'Refugees resetteled in different countries',
+					'width' : 600,
+					'height' : 400
+				};
 
-      
-		/* Creating a variable, in which im storing a result of calling the "BarChart" function */
+				/* Creating a variable, in which im storing a result of calling the "BarChart" function */
 
-        var chart = new google.visualization.BarChart(document.getElementById('refugeebarchart'));
-        /*This is where the char has to draw itself. Point it to the right variables from above. Don't switch names*/
-        chart.draw(data, options);
-      }
-    </script>
-  </head>
+				var barchart = new google.visualization.BarChart(document.getElementById('refugeebarchart'));
 
-		
-		
+				/*This is where the chart has to draw itself. Point it to the right variables from above. Don't switch names*/
+				barchart.draw(datafortable, options);
+			}
+		</script>
+	</head>
 
 	</head>
 	<body>
@@ -70,9 +69,10 @@
 		<!-- This is the header of the main page. There is a gap in the divs for summary and header -->
 
 		<h1 class="main_title"> Research on Burmese Refugees </h1>
+
+		<!--Div that will hold the pie chart-->
 		
-	  <!--Div that will hold the pie chart-->
-    <div id="refugeebarchart"></div>
+		<div id="refugeebarchart"></div>
 
 		<!-- This the bloc for the first article. The story and image are from The Dimplomat.
 		The link is embeded in the header
@@ -133,15 +133,15 @@
 		<br>
 		<div>
 
-			<a class="unwan_s" href="http://www.unhcr.org/en-us/news/latest/2016/10/58131e5d4/myanmar-refugees-pave-way-home-pilot-return.html">Myanmar refugees pave the way home in pilot return</a>
+		<a class="unwan_s" href="http://www.unhcr.org/en-us/news/latest/2016/10/58131e5d4/myanmar-refugees-pave-way-home-pilot-return.html">Myanmar refugees pave the way home in pilot return</a>
 		</div>
 
 		<div>
-			<p>
-				The article produced by the UNHCR provides some details of the refugees who left Thailand to reutrn to Myanmar.
-				It is focused on the Nupo refugee camp in Thailand and discusses the stories of different refugees who returned.
-				Those returning express a mixture of hope and anxiety on their return, some are worried about finding jobs while others have been planning for this moment for a while.
-			</p>
+		<p>
+		The article produced by the UNHCR provides some details of the refugees who left Thailand to reutrn to Myanmar.
+		It is focused on the Nupo refugee camp in Thailand and discusses the stories of different refugees who returned.
+		Those returning express a mixture of hope and anxiety on their return, some are worried about finding jobs while others have been planning for this moment for a while.
+		</p>
 		</div>
 		<br>
 		<br>
@@ -149,22 +149,22 @@
 
 		<!-- This is the bloc for the fourth story. There is a gap for divs for summary and header -->
 		<div>
-			<img src=http://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2015/12/3/6575cf21e4124c71a7e7791658210380_18.jpg />
+		<img src=http://www.aljazeera.com/mritems/imagecache/mbdxxlarge/mritems/Images/2015/12/3/6575cf21e4124c71a7e7791658210380_18.jpg />
 		</div>
 
 		<br>
 		<div>
 
-			<a class="unwan_s" href="http://www.aljazeera.com/indepth/features/2015/12/refugees-myanmar-delhi-future-151203183015643.html">Refugees from Myanmar say 'Delhi is our future'</a>
+		<a class="unwan_s" href="http://www.aljazeera.com/indepth/features/2015/12/refugees-myanmar-delhi-future-151203183015643.html">Refugees from Myanmar say 'Delhi is our future'</a>
 		</div>
 
 		<div>
-			<p>
-				The article uses the story of Thanga from Burma to highlight the many problems Burmese refugees face in India.
-				Thanga, is from the Chin ethnicity and is Christian, which is why he had to flee in July 2007, after he got into an alteraction with a military officer.
-				Delhi, in India is home to over 5000 Chin refugees, which is why Thanga also made the city his home. UNHCR assistance to these refugees is limited.
-				The organization only provides assistance to the disabled.
-			</p>
+		<p>
+		The article uses the story of Thanga from Burma to highlight the many problems Burmese refugees face in India.
+		Thanga, is from the Chin ethnicity and is Christian, which is why he had to flee in July 2007, after he got into an alteraction with a military officer.
+		Delhi, in India is home to over 5000 Chin refugees, which is why Thanga also made the city his home. UNHCR assistance to these refugees is limited.
+		The organization only provides assistance to the disabled.
+		</p>
 		</div>
 		<br>
 		<br>
