@@ -54,7 +54,7 @@
 				/* Options object includes some customization.
 				 * We will need to add to this extensively to make visualizations
 				 * we might want to publish */
-				var options = {
+				var tablestyle = {
 					'title' : 'Refugees resetteled in different countries',
 					'width' : 600,
 					'height' : 400,
@@ -65,7 +65,7 @@
 				var barchart = new google.visualization.BarChart(document.getElementById('refugeebarchart'));
 
 				/*This is where the chart has to draw itself. Point it to the right variables from above. Don't switch names*/
-				barchart.draw(datafortable, options);
+				barchart.draw(datafortable, tablestyle);
 			}
 
 			/*This is where the second chart starts*/
@@ -99,7 +99,7 @@
 				/* Options object includes some customization.
 				 * We will need to add to this extensively to make visualizations
 				 * we might want to publish */
-				var options = {
+				var tablestyle = {
 					'title' : 'Population of concern from Myanmar. The UNHCR does not have data about the number of refugees from this country',
 					'width' : 600,
 					'height' : 400,
@@ -110,7 +110,7 @@
 				var Piechart = new google.visualization.PieChart(document.getElementById('displacementpiechart'));
 
 				/*This is where the chart has to draw itself. Point it to the right variables from above. Don't switch names*/
-				Piechart.draw(datafortable, options);
+				Piechart.draw(datafortable, tablestyle);
 			}
 
 		</script>
