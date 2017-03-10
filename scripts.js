@@ -18,11 +18,11 @@
 
 			/*This the number of refugees and ethincities each country has taken in. Corrected into an an object within an array */
 
-			var number_countries_have_and_ethnicities = { "India": ["15,735", "Chin"],
-							"Malaysia": ["88,637","Karen", "Rohingya"],
-							"Thailand": ["106,637", "Karen"],
-							"United States": ["12,347", "Chin", "Karen"],
-							"Bangladesh": ["231,948", "Rohingya"],
+			var number_countries_have_and_ethnicities = { "India": {"Chin", "15,735"},
+							"Malaysia": {"Karen and Rohingya","88,637"},
+							"Thailand": {"Karen", "106,637"],
+							"United States": {"Chin and Karen", "12,347"},
+							"Bangladesh": {"Rohingya", "231,948"},
 						};
 		
 			/* The below is actualy a list of objects; each object is an article. I've used the articles that appeared initially
